@@ -1,0 +1,22 @@
+/**
+ * Глобальные стили лендинга
+ */
+
+#hero {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+}
+
+#hero .hero-inner,
+#hero header,
+#hero footer {
+  position: relative;
+  z-index: 1;
+}
+
+#hero a,
+#hero button {
+  position: relative;
+  z-index: 2;
+}

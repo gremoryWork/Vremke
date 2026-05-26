@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-deep font-body text-soft-white overflow-x-hidden;
+    background-image: radial-gradient(
+        ellipse 80% 50% at 50% -20%,
+        rgba(255, 255, 255, 0.04),
+        transparent
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 100% 100%,
+        rgba(255, 255, 255, 0.02),
+        transparent
+      );
+  }
+
+  ::selection {
+    @apply bg-white/20 text-white;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/[0.08] bg-white/[0.03];
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  .glass-card {
+    @apply border border-white/[0.06] bg-white/[0.02] rounded-sm;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .hairline {
+    @apply h-px w-full bg-white/[0.08];
+  }
+
+  .section-padding {
+    @apply px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-32;
+  }
+
+  .section-spacing {
+    @apply py-20 sm:py-28 md:py-32 lg:py-40;
+  }
+
+  /* Единая модульная сетка для всех секций */
+  .layout-container {
+    @apply mx-auto w-full max-w-7xl section-padding;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
